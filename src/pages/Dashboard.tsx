@@ -118,15 +118,11 @@ const attentionLeases = [{
 }];
 // Fix Leaflet icon issue
 import L from 'leaflet';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerIconRetina from 'leaflet/dist/images/marker-icon-2x.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-// Fix the default icon issue
-delete L.Icon.Default.prototype._getIconUrl;
+// Fix the default icon issue with URL paths instead of direct imports
 L.Icon.Default.mergeOptions({
-  iconUrl: markerIcon,
-  iconRetinaUrl: markerIconRetina,
-  shadowUrl: markerShadow
+  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png'
 });
 const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
