@@ -1,0 +1,52 @@
+/* PLEASE NOTE: THESE TAILWIND IMPORTS SHOULD NEVER BE DELETED */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL */
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.animate-bounce-in {
+  animation: bounceIn 0.6s ease-out forwards;
+}
+/* Leaflet styles fix */
+.leaflet-container {
+  z-index: 1;
+}
+.leaflet-pane {
+  z-index: 1;
+}
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 10;
+}
+/* Make sure popups appear above other elements */
+.leaflet-popup {
+  z-index: 20;
+}
+/* Fix marker positioning */
+.leaflet-marker-icon {
+  z-index: 15;
+}
